@@ -267,3 +267,8 @@ bunq-test.conf
 config.json
 .idea/.idea.BunqSdk/.idea/preferred-vcs.xml
 .idea/.idea.BunqSdk/.idea/indexLayout.xml
+
+# stuff we don't want to share and stuff we should put in git in the first place
+.vs/
+.idea/
+App.config

@@ -230,13 +230,7 @@ namespace Bunq.Sdk.Security
         /// </summary>
         public static RSA GenerateKeyPair()
         {
-#if NETSTANDARD2_0 || NET46 || NET45 || NET451 || NET452 || NET40 || NET35
-            var rsa = (RSA)new RSACryptoServiceProvider(RSA_KEY_SIZE);
-#else
-            var rsa = RSA.Create();
-            rsa.KeySize = RSA_KEY_SIZE;
-#endif
-            return rsa;
+            return new RSACryptoServiceProvider(RSA_KEY_SIZE);
         }
 
         /// <summary>

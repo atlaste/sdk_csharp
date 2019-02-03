@@ -1,0 +1,274 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7F9AAA36-0B0F-442C-A1F0-5A1B50FC0FD4}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BunqSdk461</RootNamespace>
+    <AssemblyName>BunqSdk461</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Collections.Immutable, Version=1.2.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Collections.Immutable.1.5.0\lib\netstandard2.0\System.Collections.Immutable.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Context\ApiContext.cs" />
+    <Compile Include="Context\ApiEnvironmentType.cs" />
+    <Compile Include="Context\BunqContext.cs" />
+    <Compile Include="Context\InstallationContext.cs" />
+    <Compile Include="Context\SessionContext.cs" />
+    <Compile Include="Context\UserContext.cs" />
+    <Compile Include="Exception\ApiException.cs" />
+    <Compile Include="Exception\BadRequestException.cs" />
+    <Compile Include="Exception\BunqException.cs" />
+    <Compile Include="Exception\ExceptionFactory.cs" />
+    <Compile Include="Exception\ForbiddenException.cs" />
+    <Compile Include="Exception\MethodNotAllowedException.cs" />
+    <Compile Include="Exception\NotFoundException.cs" />
+    <Compile Include="Exception\PleaseContactBunqException.cs" />
+    <Compile Include="Exception\TooManyRequestsException.cs" />
+    <Compile Include="Exception\UnauthorizedException.cs" />
+    <Compile Include="Exception\UnknownApiErrorException.cs" />
+    <Compile Include="Http\ApiClient.cs" />
+    <Compile Include="Http\BunqProxy.cs" />
+    <Compile Include="Http\BunqResponse.cs" />
+    <Compile Include="Http\BunqResponseRaw.cs" />
+    <Compile Include="Http\Pagination.cs" />
+    <Compile Include="Json\AnchorObjectConverter.cs" />
+    <Compile Include="Json\ApiEnvironmentTypeConverter.cs" />
+    <Compile Include="Json\BunqContractResolver.cs" />
+    <Compile Include="Json\BunqJsonConvert.cs" />
+    <Compile Include="Json\GeolocationConverter.cs" />
+    <Compile Include="Json\InstallationContextConverter.cs" />
+    <Compile Include="Json\InstallationConverter.cs" />
+    <Compile Include="Json\MonetaryAccountReferenceConverter.cs" />
+    <Compile Include="Json\NonIntegerNumberConverter.cs" />
+    <Compile Include="Json\PaginationConverter.cs" />
+    <Compile Include="Json\SessionServerConverter.cs" />
+    <Compile Include="Model\Core\AnchorObjectInterface.cs" />
+    <Compile Include="Model\Core\BunqModel.cs" />
+    <Compile Include="Model\Core\DeviceServerInternal.cs" />
+    <Compile Include="Model\Core\Id.cs" />
+    <Compile Include="Model\Core\Installation.cs" />
+    <Compile Include="Model\Core\MonetaryAccountReference.cs" />
+    <Compile Include="Model\Core\PublicKeyServer.cs" />
+    <Compile Include="Model\Core\SessionServer.cs" />
+    <Compile Include="Model\Core\SessionToken.cs" />
+    <Compile Include="Model\Core\Uuid.cs" />
+    <Compile Include="Model\Generated\Endpoint\AttachmentConversationContent.cs" />
+    <Compile Include="Model\Generated\Endpoint\AttachmentMonetaryAccount.cs" />
+    <Compile Include="Model\Generated\Endpoint\AttachmentPublic.cs" />
+    <Compile Include="Model\Generated\Endpoint\AttachmentPublicContent.cs" />
+    <Compile Include="Model\Generated\Endpoint\AttachmentTab.cs" />
+    <Compile Include="Model\Generated\Endpoint\AttachmentTabContent.cs" />
+    <Compile Include="Model\Generated\Endpoint\Avatar.cs" />
+    <Compile Include="Model\Generated\Endpoint\BillingContractSubscription.cs" />
+    <Compile Include="Model\Generated\Endpoint\BunqMeFundraiserProfile.cs" />
+    <Compile Include="Model\Generated\Endpoint\BunqMeFundraiserResult.cs" />
+    <Compile Include="Model\Generated\Endpoint\BunqMeTab.cs" />
+    <Compile Include="Model\Generated\Endpoint\BunqMeTabEntry.cs" />
+    <Compile Include="Model\Generated\Endpoint\BunqMeTabResultInquiry.cs" />
+    <Compile Include="Model\Generated\Endpoint\BunqMeTabResultResponse.cs" />
+    <Compile Include="Model\Generated\Endpoint\Card.cs" />
+    <Compile Include="Model\Generated\Endpoint\CardBatch.cs" />
+    <Compile Include="Model\Generated\Endpoint\CardDebit.cs" />
+    <Compile Include="Model\Generated\Endpoint\CardGeneratedCvc2.cs" />
+    <Compile Include="Model\Generated\Endpoint\CardName.cs" />
+    <Compile Include="Model\Generated\Endpoint\CardReplace.cs" />
+    <Compile Include="Model\Generated\Endpoint\CashRegister.cs" />
+    <Compile Include="Model\Generated\Endpoint\CashRegisterQrCode.cs" />
+    <Compile Include="Model\Generated\Endpoint\CashRegisterQrCodeContent.cs" />
+    <Compile Include="Model\Generated\Endpoint\CertificatePinned.cs" />
+    <Compile Include="Model\Generated\Endpoint\ChatMessage.cs" />
+    <Compile Include="Model\Generated\Endpoint\Customer.cs" />
+    <Compile Include="Model\Generated\Endpoint\CustomerLimit.cs" />
+    <Compile Include="Model\Generated\Endpoint\CustomerStatementExport.cs" />
+    <Compile Include="Model\Generated\Endpoint\CustomerStatementExportContent.cs" />
+    <Compile Include="Model\Generated\Endpoint\Device.cs" />
+    <Compile Include="Model\Generated\Endpoint\DeviceServer.cs" />
+    <Compile Include="Model\Generated\Endpoint\DraftPayment.cs" />
+    <Compile Include="Model\Generated\Endpoint\DraftShareInviteApiKey.cs" />
+    <Compile Include="Model\Generated\Endpoint\DraftShareInviteApiKeyQrCodeContent.cs" />
+    <Compile Include="Model\Generated\Endpoint\DraftShareInviteBank.cs" />
+    <Compile Include="Model\Generated\Endpoint\DraftShareInviteBankQrCodeContent.cs" />
+    <Compile Include="Model\Generated\Endpoint\ExportAnnualOverview.cs" />
+    <Compile Include="Model\Generated\Endpoint\ExportAnnualOverviewContent.cs" />
+    <Compile Include="Model\Generated\Endpoint\IdealMerchantTransaction.cs" />
+    <Compile Include="Model\Generated\Endpoint\InstallationServerPublicKey.cs" />
+    <Compile Include="Model\Generated\Endpoint\Invoice.cs" />
+    <Compile Include="Model\Generated\Endpoint\InvoiceByUser.cs" />
+    <Compile Include="Model\Generated\Endpoint\MasterCardAction.cs" />
+    <Compile Include="Model\Generated\Endpoint\MonetaryAccount.cs" />
+    <Compile Include="Model\Generated\Endpoint\MonetaryAccountBank.cs" />
+    <Compile Include="Model\Generated\Endpoint\MonetaryAccountJoint.cs" />
+    <Compile Include="Model\Generated\Endpoint\MonetaryAccountLight.cs" />
+    <Compile Include="Model\Generated\Endpoint\MonetaryAccountProfile.cs" />
+    <Compile Include="Model\Generated\Endpoint\NoteAttachmentBankSwitchServiceNetherlandsIncomingPayment.cs" />
+    <Compile Include="Model\Generated\Endpoint\NoteAttachmentBunqMeFundraiserResult.cs" />
+    <Compile Include="Model\Generated\Endpoint\NoteAttachmentDraftPayment.cs" />
+    <Compile Include="Model\Generated\Endpoint\NoteAttachmentIdealMerchantTransaction.cs" />
+    <Compile Include="Model\Generated\Endpoint\NoteAttachmentMasterCardAction.cs" />
+    <Compile Include="Model\Generated\Endpoint\NoteAttachmentPayment.cs" />
+    <Compile Include="Model\Generated\Endpoint\NoteAttachmentPaymentBatch.cs" />
+    <Compile Include="Model\Generated\Endpoint\NoteAttachmentRequestInquiry.cs" />
+    <Compile Include="Model\Generated\Endpoint\NoteAttachmentRequestInquiryBatch.cs" />
+    <Compile Include="Model\Generated\Endpoint\NoteAttachmentRequestResponse.cs" />
+    <Compile Include="Model\Generated\Endpoint\NoteAttachmentScheduleInstance.cs" />
+    <Compile Include="Model\Generated\Endpoint\NoteAttachmentSofortMerchantTransaction.cs" />
+    <Compile Include="Model\Generated\Endpoint\NoteAttachmentWhitelistResult.cs" />
+    <Compile Include="Model\Generated\Endpoint\NoteTextBankSwitchServiceNetherlandsIncomingPayment.cs" />
+    <Compile Include="Model\Generated\Endpoint\NoteTextBunqMeFundraiserResult.cs" />
+    <Compile Include="Model\Generated\Endpoint\NoteTextDraftPayment.cs" />
+    <Compile Include="Model\Generated\Endpoint\NoteTextIdealMerchantTransaction.cs" />
+    <Compile Include="Model\Generated\Endpoint\NoteTextMasterCardAction.cs" />
+    <Compile Include="Model\Generated\Endpoint\NoteTextPayment.cs" />
+    <Compile Include="Model\Generated\Endpoint\NoteTextPaymentBatch.cs" />
+    <Compile Include="Model\Generated\Endpoint\NoteTextRequestInquiry.cs" />
+    <Compile Include="Model\Generated\Endpoint\NoteTextRequestInquiryBatch.cs" />
+    <Compile Include="Model\Generated\Endpoint\NoteTextRequestResponse.cs" />
+    <Compile Include="Model\Generated\Endpoint\NoteTextScheduleInstance.cs" />
+    <Compile Include="Model\Generated\Endpoint\NoteTextSofortMerchantTransaction.cs" />
+    <Compile Include="Model\Generated\Endpoint\NoteTextWhitelistResult.cs" />
+    <Compile Include="Model\Generated\Endpoint\Payment.cs" />
+    <Compile Include="Model\Generated\Endpoint\PaymentBatch.cs" />
+    <Compile Include="Model\Generated\Endpoint\PermittedIp.cs" />
+    <Compile Include="Model\Generated\Endpoint\RequestInquiry.cs" />
+    <Compile Include="Model\Generated\Endpoint\RequestInquiryBatch.cs" />
+    <Compile Include="Model\Generated\Endpoint\RequestResponse.cs" />
+    <Compile Include="Model\Generated\Endpoint\SandboxUser.cs" />
+    <Compile Include="Model\Generated\Endpoint\Schedule.cs" />
+    <Compile Include="Model\Generated\Endpoint\ScheduleInstance.cs" />
+    <Compile Include="Model\Generated\Endpoint\SchedulePayment.cs" />
+    <Compile Include="Model\Generated\Endpoint\SchedulePaymentBatch.cs" />
+    <Compile Include="Model\Generated\Endpoint\ScheduleUser.cs" />
+    <Compile Include="Model\Generated\Endpoint\Session.cs" />
+    <Compile Include="Model\Generated\Endpoint\ShareInviteBankAmountUsed.cs" />
+    <Compile Include="Model\Generated\Endpoint\ShareInviteBankInquiry.cs" />
+    <Compile Include="Model\Generated\Endpoint\ShareInviteBankResponse.cs" />
+    <Compile Include="Model\Generated\Endpoint\Tab.cs" />
+    <Compile Include="Model\Generated\Endpoint\TabAttachmentTab.cs" />
+    <Compile Include="Model\Generated\Endpoint\TabAttachmentTabContent.cs" />
+    <Compile Include="Model\Generated\Endpoint\TabItem.cs" />
+    <Compile Include="Model\Generated\Endpoint\TabItemShop.cs" />
+    <Compile Include="Model\Generated\Endpoint\TabItemShopBatch.cs" />
+    <Compile Include="Model\Generated\Endpoint\TabQrCodeContent.cs" />
+    <Compile Include="Model\Generated\Endpoint\TabResultInquiry.cs" />
+    <Compile Include="Model\Generated\Endpoint\TabResultResponse.cs" />
+    <Compile Include="Model\Generated\Endpoint\TabUsageMultiple.cs" />
+    <Compile Include="Model\Generated\Endpoint\TabUsageSingle.cs" />
+    <Compile Include="Model\Generated\Endpoint\TokenQrRequestIdeal.cs" />
+    <Compile Include="Model\Generated\Endpoint\TokenQrRequestSofort.cs" />
+    <Compile Include="Model\Generated\Endpoint\User.cs" />
+    <Compile Include="Model\Generated\Endpoint\UserApiKey.cs" />
+    <Compile Include="Model\Generated\Endpoint\UserCompany.cs" />
+    <Compile Include="Model\Generated\Endpoint\UserCredentialPasswordIp.cs" />
+    <Compile Include="Model\Generated\Endpoint\UserLight.cs" />
+    <Compile Include="Model\Generated\Endpoint\UserPerson.cs" />
+    <Compile Include="Model\Generated\Endpoint\Whitelist.cs" />
+    <Compile Include="Model\Generated\Endpoint\WhitelistResult.cs" />
+    <Compile Include="Model\Generated\Object\Address.cs" />
+    <Compile Include="Model\Generated\Object\Amount.cs" />
+    <Compile Include="Model\Generated\Object\Attachment.cs" />
+    <Compile Include="Model\Generated\Object\AttachmentMonetaryAccountPayment.cs" />
+    <Compile Include="Model\Generated\Object\AttachmentPublic.cs" />
+    <Compile Include="Model\Generated\Object\AttachmentTab.cs" />
+    <Compile Include="Model\Generated\Object\Avatar.cs" />
+    <Compile Include="Model\Generated\Object\BudgetRestriction.cs" />
+    <Compile Include="Model\Generated\Object\BunqId.cs" />
+    <Compile Include="Model\Generated\Object\BunqMeMerchantAvailable.cs" />
+    <Compile Include="Model\Generated\Object\CardBatchEntry.cs" />
+    <Compile Include="Model\Generated\Object\CardCountryPermission.cs" />
+    <Compile Include="Model\Generated\Object\CardLimit.cs" />
+    <Compile Include="Model\Generated\Object\CardMagStripePermission.cs" />
+    <Compile Include="Model\Generated\Object\CardPinAssignment.cs" />
+    <Compile Include="Model\Generated\Object\Certificate.cs" />
+    <Compile Include="Model\Generated\Object\CoOwner.cs" />
+    <Compile Include="Model\Generated\Object\DraftPaymentAnchorObject.cs" />
+    <Compile Include="Model\Generated\Object\DraftPaymentEntry.cs" />
+    <Compile Include="Model\Generated\Object\DraftPaymentResponse.cs" />
+    <Compile Include="Model\Generated\Object\DraftShareInviteEntry.cs" />
+    <Compile Include="Model\Generated\Object\Error.cs" />
+    <Compile Include="Model\Generated\Object\Geolocation.cs" />
+    <Compile Include="Model\Generated\Object\Image.cs" />
+    <Compile Include="Model\Generated\Object\InvoiceItem.cs" />
+    <Compile Include="Model\Generated\Object\InvoiceItemGroup.cs" />
+    <Compile Include="Model\Generated\Object\Issuer.cs" />
+    <Compile Include="Model\Generated\Object\LabelCard.cs" />
+    <Compile Include="Model\Generated\Object\LabelMonetaryAccount.cs" />
+    <Compile Include="Model\Generated\Object\LabelUser.cs" />
+    <Compile Include="Model\Generated\Object\MonetaryAccountProfileDrain.cs" />
+    <Compile Include="Model\Generated\Object\MonetaryAccountProfileFill.cs" />
+    <Compile Include="Model\Generated\Object\MonetaryAccountSetting.cs" />
+    <Compile Include="Model\Generated\Object\NotificationAnchorObject.cs" />
+    <Compile Include="Model\Generated\Object\NotificationFilter.cs" />
+    <Compile Include="Model\Generated\Object\NotificationUrl.cs" />
+    <Compile Include="Model\Generated\Object\PermittedDevice.cs" />
+    <Compile Include="Model\Generated\Object\Pointer.cs" />
+    <Compile Include="Model\Generated\Object\RequestInquiryReference.cs" />
+    <Compile Include="Model\Generated\Object\RequestReferenceSplitTheBillAnchorObject.cs" />
+    <Compile Include="Model\Generated\Object\ScheduleAnchorObject.cs" />
+    <Compile Include="Model\Generated\Object\ScheduleInstanceAnchorObject.cs" />
+    <Compile Include="Model\Generated\Object\SchedulePaymentEntry.cs" />
+    <Compile Include="Model\Generated\Object\ShareDetail.cs" />
+    <Compile Include="Model\Generated\Object\ShareDetailDraftPayment.cs" />
+    <Compile Include="Model\Generated\Object\ShareDetailPayment.cs" />
+    <Compile Include="Model\Generated\Object\ShareDetailReadOnly.cs" />
+    <Compile Include="Model\Generated\Object\TabTextWaitingScreen.cs" />
+    <Compile Include="Model\Generated\Object\TabVisibility.cs" />
+    <Compile Include="Model\Generated\Object\TaxResident.cs" />
+    <Compile Include="Model\Generated\Object\Ubo.cs" />
+    <Compile Include="Model\Generated\Object\UserApiKeyAnchoredUser.cs" />
+    <Compile Include="Model\Generated\Object\WhitelistResultViewAnchoredObject.cs" />
+    <Compile Include="Security\AsnMessage.cs" />
+    <Compile Include="Security\AsnType.cs" />
+    <Compile Include="Security\Helpers.cs" />
+    <Compile Include="Security\RsaKeyUtils.cs" />
+    <Compile Include="Security\RsaParameterTraits.cs" />
+    <Compile Include="Security\SecurityUtils.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Exception\EXCEPTIONS.md" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
